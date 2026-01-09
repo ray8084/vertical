@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A6986EF8701DBF108D8D3B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8216B1064F24D9A672C78BAA /* AppDelegate.swift */; };
+		12EF1929538AA27ECD63956A /* 1bam.png in Resources */ = {isa = PBXBuildFile; fileRef = F565F76AC1E5917982C9653A /* 1bam.png */; };
 		181E23DC8070FBBD72C23B4D /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF94EF7DAAFBA6F2E017093 /* Hand.swift */; };
 		2EECDD0BE448930125C82CA8 /* Card2018.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6629569CABAAA0631FD4E9 /* Card2018.swift */; };
 		31F19510FD90125BA9F8023C /* PlayerBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE55F1DEB4F366F069ADA /* PlayerBot.swift */; };
@@ -74,6 +75,7 @@
 		E857F34851F0CE0FEDD8A707 /* Rack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rack.swift; sourceTree = "<group>"; };
 		EA3331A60D3ED5B28FA32D11 /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
 		EC4B29201F3E755BCE302554 /* Card2017.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2017.swift; sourceTree = "<group>"; };
+		F565F76AC1E5917982C9653A /* 1bam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1bam.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -95,6 +97,7 @@
 				16AF560DD77B7DD85A401007 /* SceneDelegate.swift */,
 				B7B347C622ECD6D5C29B52DE /* Maj */,
 				88403CFEC9E930F562A4C6DD /* Models */,
+				FDBA2634DD0C667544C1C5AA /* TileImages */,
 				FB07163273E6D4AF198E78A3 /* ViewControllers */,
 			);
 			path = VerticalApp;
@@ -156,6 +159,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		FDBA2634DD0C667544C1C5AA /* TileImages */ = {
+			isa = PBXGroup;
+			children = (
+				F565F76AC1E5917982C9653A /* 1bam.png */,
+			);
+			path = TileImages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12EF1929538AA27ECD63956A /* 1bam.png in Resources */,
 				76AA305576E81DB67370D552 /* Assets.xcassets in Resources */,
 				F36F7C07FB0175B9B2DA03C8 /* LaunchScreen.storyboard in Resources */,
 			);
