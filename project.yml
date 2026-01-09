@@ -1,0 +1,40 @@
+name: VerticalApp
+options:
+  bundleIdPrefix: com.vertical
+  deploymentTarget:
+    iOS: "15.0"
+  developmentLanguage: en
+  xcodeVersion: "14.0"
+
+
+targets:
+  VerticalApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: VerticalApp
+    resources:
+      - path: VerticalApp/Assets.xcassets
+      - path: VerticalApp/LaunchScreen.storyboard
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.vertical.app
+      PRODUCT_NAME: VerticalApp
+      SWIFT_VERSION: "5.0"
+      TARGETED_DEVICE_FAMILY: "1,2" # iPhone and iPad
+      INFOPLIST_FILE: VerticalApp/Info.plist
+      INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+      INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+      DEVELOPMENT_TEAM: "" # Set your team ID here
+    info:
+      path: VerticalApp/Info.plist
+      properties:
+        CFBundleDisplayName: Vertical
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+        UILaunchScreen:
+          UILaunchScreenStoryboardName: LaunchScreen
