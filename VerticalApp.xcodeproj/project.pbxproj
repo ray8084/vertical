@@ -8,22 +8,72 @@
 
 /* Begin PBXBuildFile section */
 		0A6986EF8701DBF108D8D3B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8216B1064F24D9A672C78BAA /* AppDelegate.swift */; };
+		181E23DC8070FBBD72C23B4D /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF94EF7DAAFBA6F2E017093 /* Hand.swift */; };
+		2EECDD0BE448930125C82CA8 /* Card2018.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6629569CABAAA0631FD4E9 /* Card2018.swift */; };
+		31F19510FD90125BA9F8023C /* PlayerBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE55F1DEB4F366F069ADA /* PlayerBot.swift */; };
+		3CAFDABD06B95186A7C43DED /* TileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154902DF322794A4EAAE6B16 /* TileSet.swift */; };
+		3E457350A94F3F17C494843B /* Card2016.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC2AF2698E55439114C677A /* Card2016.swift */; };
+		431A81CD51F0200E38877659 /* Card2024.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E68CDE01C4E2C1CDCF461 /* Card2024.swift */; };
 		5375DB15DA8738CC6CDB1AB9 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB28B7BC176562550E663E97 /* ItemsViewController.swift */; };
+		5673EDCCD9CA8603D865A174 /* Card2017.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B29201F3E755BCE302554 /* Card2017.swift */; };
+		5C1E7101460C515F12003F27 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452B2AF433C2ACD26C547126 /* Settings.swift */; };
+		5DECB57B4664B6668C02F450 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870EECC1F02C26A6096DCDE4 /* Card.swift */; };
+		6184C342D2A7880C401676BB /* Card2025.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D47B61596A69BE912C189 /* Card2025.swift */; };
+		63EE752E8034FFD6D21B6D65 /* Rack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857F34851F0CE0FEDD8A707 /* Rack.swift */; };
+		68A569996563E70289F0E918 /* Maj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFD569B9960686A4C5CAD8 /* Maj.swift */; };
+		742D1A1992E59B5A94747F68 /* MatchingTileSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9EF80A87F3931ECB87C995 /* MatchingTileSets.swift */; };
 		76AA305576E81DB67370D552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B97D7E71D2B743BC47A1361 /* Assets.xcassets */; };
+		8267724F426FC1058FB9D951 /* TileVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD73BB457866D800594284A /* TileVector.swift */; };
+		8C21FA8362345A3591ADD2AF /* Card2019.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E5ECB567CCA9BACEDCCE53 /* Card2019.swift */; };
+		97A642269C83C8116593FF80 /* DiscardTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8D9791FD6B9F9BF67DF4F /* DiscardTable.swift */; };
+		A1A4F5DEC909400272E92919 /* Card2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DCE71D795686BD8A87C4B0 /* Card2020.swift */; };
 		AE2F92942F89271A9F728A4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AF560DD77B7DD85A401007 /* SceneDelegate.swift */; };
+		B2EFB59542623B6D150756D7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866FB45045BEBCE90AD6961 /* Player.swift */; };
+		C1A6ED934D4E12D9012335D8 /* Card2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A6E14E568ED5DDBEF0408 /* Card2021.swift */; };
+		C3E690C4987A779B9A18FF9E /* IdList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335D694C5A831CB96DAB763 /* IdList.swift */; };
+		CE395FD3313F77032DC5D1F7 /* TileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2CD98E3BC1E283982A3D4E /* TileList.swift */; };
+		D542D914CE24192AFAAE20E5 /* Card2023.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561E561A858E0A11A5C5E5CE /* Card2023.swift */; };
+		D6721F749CC218D5801D25C9 /* Card2022.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76198F891A55B7DDA286BA04 /* Card2022.swift */; };
 		DBF922B822132BADE6B43267 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409B2F4A46631A57CC0DFC6 /* Item.swift */; };
+		DEDC3C553EEBD6D5367B6FCB /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3331A60D3ED5B28FA32D11 /* Wall.swift */; };
+		F0738DF916358B316D512004 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478CFB454E28F34A76C5D552 /* Tile.swift */; };
 		F36F7C07FB0175B9B2DA03C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A390603FEA55D1B325F0227 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AC2AF2698E55439114C677A /* Card2016.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2016.swift; sourceTree = "<group>"; };
+		154902DF322794A4EAAE6B16 /* TileSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSet.swift; sourceTree = "<group>"; };
 		16AF560DD77B7DD85A401007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A390603FEA55D1B325F0227 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1A9EF80A87F3931ECB87C995 /* MatchingTileSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingTileSets.swift; sourceTree = "<group>"; };
+		1AF94EF7DAAFBA6F2E017093 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		3409B2F4A46631A57CC0DFC6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		440544512A1A98C213718B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		452B2AF433C2ACD26C547126 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		478CFB454E28F34A76C5D552 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		4BD73BB457866D800594284A /* TileVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileVector.swift; sourceTree = "<group>"; };
+		561E561A858E0A11A5C5E5CE /* Card2023.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2023.swift; sourceTree = "<group>"; };
+		5866FB45045BEBCE90AD6961 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5D7D47B61596A69BE912C189 /* Card2025.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2025.swift; sourceTree = "<group>"; };
+		624E68CDE01C4E2C1CDCF461 /* Card2024.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2024.swift; sourceTree = "<group>"; };
+		6EEEE55F1DEB4F366F069ADA /* PlayerBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBot.swift; sourceTree = "<group>"; };
+		76198F891A55B7DDA286BA04 /* Card2022.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2022.swift; sourceTree = "<group>"; };
 		8216B1064F24D9A672C78BAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		870EECC1F02C26A6096DCDE4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		8EFFD569B9960686A4C5CAD8 /* Maj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maj.swift; sourceTree = "<group>"; };
+		90A8D9791FD6B9F9BF67DF4F /* DiscardTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardTable.swift; sourceTree = "<group>"; };
+		950A6E14E568ED5DDBEF0408 /* Card2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2021.swift; sourceTree = "<group>"; };
 		9B97D7E71D2B743BC47A1361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC6629569CABAAA0631FD4E9 /* Card2018.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2018.swift; sourceTree = "<group>"; };
+		B8E5ECB567CCA9BACEDCCE53 /* Card2019.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2019.swift; sourceTree = "<group>"; };
 		CE6BF59A21DAA81FEFF964FA /* VerticalApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VerticalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D335D694C5A831CB96DAB763 /* IdList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdList.swift; sourceTree = "<group>"; };
+		D7DCE71D795686BD8A87C4B0 /* Card2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2020.swift; sourceTree = "<group>"; };
 		DB28B7BC176562550E663E97 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		DC2CD98E3BC1E283982A3D4E /* TileList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileList.swift; sourceTree = "<group>"; };
+		E857F34851F0CE0FEDD8A707 /* Rack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rack.swift; sourceTree = "<group>"; };
+		EA3331A60D3ED5B28FA32D11 /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		EC4B29201F3E755BCE302554 /* Card2017.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2017.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -43,6 +93,7 @@
 				440544512A1A98C213718B04 /* Info.plist */,
 				1A390603FEA55D1B325F0227 /* LaunchScreen.storyboard */,
 				16AF560DD77B7DD85A401007 /* SceneDelegate.swift */,
+				B7B347C622ECD6D5C29B52DE /* Maj */,
 				88403CFEC9E930F562A4C6DD /* Models */,
 				FB07163273E6D4AF198E78A3 /* ViewControllers */,
 			);
@@ -63,6 +114,38 @@
 				591FD45A93814BACEBE4EB77 /* VerticalApp */,
 				4FF0A266A3348DAAF0FD9F22 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		B7B347C622ECD6D5C29B52DE /* Maj */ = {
+			isa = PBXGroup;
+			children = (
+				870EECC1F02C26A6096DCDE4 /* Card.swift */,
+				0AC2AF2698E55439114C677A /* Card2016.swift */,
+				EC4B29201F3E755BCE302554 /* Card2017.swift */,
+				AC6629569CABAAA0631FD4E9 /* Card2018.swift */,
+				B8E5ECB567CCA9BACEDCCE53 /* Card2019.swift */,
+				D7DCE71D795686BD8A87C4B0 /* Card2020.swift */,
+				950A6E14E568ED5DDBEF0408 /* Card2021.swift */,
+				76198F891A55B7DDA286BA04 /* Card2022.swift */,
+				561E561A858E0A11A5C5E5CE /* Card2023.swift */,
+				624E68CDE01C4E2C1CDCF461 /* Card2024.swift */,
+				5D7D47B61596A69BE912C189 /* Card2025.swift */,
+				90A8D9791FD6B9F9BF67DF4F /* DiscardTable.swift */,
+				1AF94EF7DAAFBA6F2E017093 /* Hand.swift */,
+				D335D694C5A831CB96DAB763 /* IdList.swift */,
+				8EFFD569B9960686A4C5CAD8 /* Maj.swift */,
+				1A9EF80A87F3931ECB87C995 /* MatchingTileSets.swift */,
+				5866FB45045BEBCE90AD6961 /* Player.swift */,
+				6EEEE55F1DEB4F366F069ADA /* PlayerBot.swift */,
+				E857F34851F0CE0FEDD8A707 /* Rack.swift */,
+				452B2AF433C2ACD26C547126 /* Settings.swift */,
+				478CFB454E28F34A76C5D552 /* Tile.swift */,
+				DC2CD98E3BC1E283982A3D4E /* TileList.swift */,
+				154902DF322794A4EAAE6B16 /* TileSet.swift */,
+				4BD73BB457866D800594284A /* TileVector.swift */,
+				EA3331A60D3ED5B28FA32D11 /* Wall.swift */,
+			);
+			path = Maj;
 			sourceTree = "<group>";
 		};
 		FB07163273E6D4AF198E78A3 /* ViewControllers */ = {
@@ -145,9 +228,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6986EF8701DBF108D8D3B2 /* AppDelegate.swift in Sources */,
+				5DECB57B4664B6668C02F450 /* Card.swift in Sources */,
+				3E457350A94F3F17C494843B /* Card2016.swift in Sources */,
+				5673EDCCD9CA8603D865A174 /* Card2017.swift in Sources */,
+				2EECDD0BE448930125C82CA8 /* Card2018.swift in Sources */,
+				8C21FA8362345A3591ADD2AF /* Card2019.swift in Sources */,
+				A1A4F5DEC909400272E92919 /* Card2020.swift in Sources */,
+				C1A6ED934D4E12D9012335D8 /* Card2021.swift in Sources */,
+				D6721F749CC218D5801D25C9 /* Card2022.swift in Sources */,
+				D542D914CE24192AFAAE20E5 /* Card2023.swift in Sources */,
+				431A81CD51F0200E38877659 /* Card2024.swift in Sources */,
+				6184C342D2A7880C401676BB /* Card2025.swift in Sources */,
+				97A642269C83C8116593FF80 /* DiscardTable.swift in Sources */,
+				181E23DC8070FBBD72C23B4D /* Hand.swift in Sources */,
+				C3E690C4987A779B9A18FF9E /* IdList.swift in Sources */,
 				DBF922B822132BADE6B43267 /* Item.swift in Sources */,
 				5375DB15DA8738CC6CDB1AB9 /* ItemsViewController.swift in Sources */,
+				68A569996563E70289F0E918 /* Maj.swift in Sources */,
+				742D1A1992E59B5A94747F68 /* MatchingTileSets.swift in Sources */,
+				B2EFB59542623B6D150756D7 /* Player.swift in Sources */,
+				31F19510FD90125BA9F8023C /* PlayerBot.swift in Sources */,
+				63EE752E8034FFD6D21B6D65 /* Rack.swift in Sources */,
 				AE2F92942F89271A9F728A4D /* SceneDelegate.swift in Sources */,
+				5C1E7101460C515F12003F27 /* Settings.swift in Sources */,
+				F0738DF916358B316D512004 /* Tile.swift in Sources */,
+				CE395FD3313F77032DC5D1F7 /* TileList.swift in Sources */,
+				3CAFDABD06B95186A7C43DED /* TileSet.swift in Sources */,
+				8267724F426FC1058FB9D951 /* TileVector.swift in Sources */,
+				DEDC3C553EEBD6D5367B6FCB /* Wall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
