@@ -10,8 +10,8 @@ import UIKit
 class ItemsViewController: UIViewController {
     
     // Single master list of all tiles (14 total: 5 top + 4 middle + 5 bottom)
+    // Stores UIImageView objects - each tile view already has its image loaded
     private var allTiles: [UIImageView] = []
-    private var allTileNames: [String] = []
     
     // Display rows (populated from master list)
     private var topRowImageViews: [UIImageView] = []
@@ -89,17 +89,14 @@ class ItemsViewController: UIViewController {
             // Load the tile image
             if let image = UIImage(named: tileName) {
                 tileImageView.image = image
-                tileImageView.tag = tileNameToTag(tileName)
                 print("✓ Successfully loaded \(tileName) image")
             } else {
                 tileImageView.image = UIImage(systemName: "square.fill")
                 tileImageView.tintColor = .red
-                tileImageView.tag = 0
                 print("✗ Failed to load \(tileName) image")
             }
             
             allTiles.append(tileImageView)
-            allTileNames.append(tileName)
             
             // Add pan gesture recognizer for drag and drop
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
@@ -109,7 +106,7 @@ class ItemsViewController: UIViewController {
             view.addSubview(tileImageView)
         }
         
-        // Redistribute tiles into rows
+        // Redistribute tiles into rows (this will set the tags to 1-14)
         redistributeTilesToRows()
     }
     
@@ -123,7 +120,11 @@ class ItemsViewController: UIViewController {
         // Top row: indices 0-4 (5 tiles)
         // Middle row: indices 5-8 (4 tiles)
         // Bottom row: indices 9-13 (5 tiles)
+        // Reset tags to match master list indices (1-14, stored as 1-based)
         for (index, tile) in allTiles.enumerated() {
+            // Set tag to 1-based index (1-14) for easy tracking
+            tile.tag = index + 1
+            
             if index < topRowCount {
                 topRowImageViews.append(tile)
                 view.bringSubviewToFront(tile)
@@ -239,10 +240,8 @@ class ItemsViewController: UIViewController {
         
         switch gesture.state {
         case .began:
-            // Find index in master list
-            if let index = allTiles.firstIndex(of: tileView) {
-                draggedTileOriginalIndex = index
-            }
+            // Get index from tag (1-based, convert to 0-based for array access)
+            draggedTileOriginalIndex = tileView.tag - 1
             
             draggedTile = tileView
             dragOffset = gesture.location(in: tileView)
@@ -282,79 +281,83 @@ class ItemsViewController: UIViewController {
     }
     
     private func handleDrop(at location: CGPoint, tile: UIImageView) {
-        guard let originalIndex = draggedTileOriginalIndex else { return }
+        guard let originalIndex = draggedTileOriginalIndex, originalIndex >= 0, originalIndex < allTiles.count else { return }
         
-        let screenWidth = view.bounds.width
-        let safeAreaBottom = view.safeAreaInsets.bottom
-        let tileW = tileWidth(for: screenWidth)
-        let tileH = tileHeight(for: tileW)
+        // Find which tile view is at the drop location by checking all tiles
+        var targetIndex: Int = originalIndex // Default to original if no tile found
         
-        // Calculate which row and position the drop location corresponds to
-        let frontRowY = view.bounds.height - bottomOffset - tileH - safeAreaBottom
-        let backRowY = frontRowY - tileH - rowSpacing
-        let topRowY = backRowY - tileH - rowSpacing
-        
-        // Calculate center X for all rows (they're all aligned)
-        let totalTileWidth = (tileW * CGFloat(bottomRowCount)) + (tileSpacing * CGFloat(bottomRowCount - 1))
-        let rowStartX = (screenWidth - totalTileWidth) / 2
-        
-        // Determine which row based on Y position
-        var targetRow: Int = 0
-        var targetRowY: CGFloat = frontRowY
-        
-        if location.y < topRowY + tileH / 2 {
-            targetRow = 2 // Top row
-            targetRowY = topRowY
-        } else if location.y < backRowY + tileH / 2 {
-            targetRow = 1 // Back row (middle)
-            targetRowY = backRowY
-        } else {
-            targetRow = 0 // Front row (bottom)
-            targetRowY = frontRowY
+        for tileView in allTiles {
+            if tileView != tile && tileView.frame.contains(location) {
+                // Found a tile at the drop location - use its tag (1-14) to get master list index
+                // Tag is 1-based, convert to 0-based array index
+                let tagIndex = tileView.tag - 1
+                if tagIndex >= 0 && tagIndex < allTiles.count {
+                    targetIndex = tagIndex
+                }
+                break
+            }
         }
         
-        // Determine position within row based on X position
-        // Use floor() instead of round() to always insert before the tile being dropped on
-        let relativeX = location.x - rowStartX
-        var targetRowIndex = Int(floor(relativeX / (tileW + tileSpacing)))
-        
-        // Get the tile name
-        let tileTag = tile.tag
-        let imageName = tagToTileName(tileTag)
-        
-        // Calculate target index in master list
-        var targetIndex: Int
-        switch targetRow {
-        case 0: // Bottom row: indices 9-13 (5 tiles)
-            targetRowIndex = max(0, min(targetRowIndex, bottomRowCount))
-            targetIndex = topRowCount + middleRowCount + targetRowIndex
-        case 1: // Middle row: indices 5-8 (4 tiles)
-            targetRowIndex = max(0, min(targetRowIndex, middleRowCount))
-            targetIndex = topRowCount + targetRowIndex
-        case 2: // Top row: indices 0-4 (5 tiles)
-            targetRowIndex = max(0, min(targetRowIndex, topRowCount))
-            targetIndex = targetRowIndex
-        default:
-            targetIndex = originalIndex
+        // If no tile was found at drop location, determine based on which row and edge
+        if targetIndex == originalIndex {
+            let screenWidth = view.bounds.width
+            let safeAreaBottom = view.safeAreaInsets.bottom
+            let tileW = tileWidth(for: screenWidth)
+            let tileH = tileHeight(for: tileW)
+            
+            let frontRowY = view.bounds.height - bottomOffset - tileH - safeAreaBottom
+            let backRowY = frontRowY - tileH - rowSpacing
+            let topRowY = backRowY - tileH - rowSpacing
+            
+            // Determine which row based on Y position
+            var targetRow: Int = 0
+            if location.y < topRowY + tileH / 2 {
+                targetRow = 2 // Top row
+            } else if location.y < backRowY + tileH / 2 {
+                targetRow = 1 // Middle row
+            } else {
+                targetRow = 0 // Bottom row
+            }
+            
+            // If dropped at the end of a row (past the last tile), insert at the end of that row
+            let rowArray: [UIImageView]
+            switch targetRow {
+            case 0: rowArray = tileImageViews
+            case 1: rowArray = backRowImageViews
+            case 2: rowArray = topRowImageViews
+            default: rowArray = []
+            }
+            
+            if !rowArray.isEmpty {
+                // Find the last tile in that row and use its tag
+                if let lastTile = rowArray.last {
+                    let lastTag = lastTile.tag - 1
+                    // Insert after the last tile in that row
+                    targetIndex = min(lastTag + 1, allTiles.count - 1)
+                }
+            }
         }
+        
+        // Clamp targetIndex to valid range
+        targetIndex = max(0, min(targetIndex, allTiles.count - 1))
         
         // Only reorder if the position actually changed
         if targetIndex != originalIndex {
-            // Remove tile from original position first
+            // Remove tile from original position
             allTiles.remove(at: originalIndex)
-            allTileNames.remove(at: originalIndex)
             
-            // Adjust target index if inserting after the original position (since we removed one item)
+            // Adjust target index if inserting after the original position
+            let adjustedTargetIndex: Int
             if targetIndex > originalIndex {
-                targetIndex -= 1
+                adjustedTargetIndex = targetIndex - 1
+            } else {
+                adjustedTargetIndex = targetIndex
             }
             
             // Insert at new position in master list
-            allTiles.insert(tile, at: targetIndex)
-            allTileNames.insert(imageName, at: targetIndex)
+            allTiles.insert(tile, at: adjustedTargetIndex)
             
-            // Redistribute all tiles to rows (this maintains the 5-4-5 distribution)
-            // This works for same-row reordering and cross-row moves
+            // Reset tags and repopulate rows (tags will be set to 1-14)
             redistributeTilesToRows()
             
             // Recalculate all positions with animation so tiles shift smoothly
