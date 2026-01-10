@@ -314,8 +314,9 @@ class ItemsViewController: UIViewController {
         }
         
         // Determine position within row based on X position
+        // Use floor() instead of round() to always insert before the tile being dropped on
         let relativeX = location.x - rowStartX
-        var targetRowIndex = Int(round(relativeX / (tileW + tileSpacing)))
+        var targetRowIndex = Int(floor(relativeX / (tileW + tileSpacing)))
         
         // Get the tile name
         let tileTag = tile.tag
@@ -325,33 +326,39 @@ class ItemsViewController: UIViewController {
         var targetIndex: Int
         switch targetRow {
         case 0: // Bottom row: indices 9-13 (5 tiles)
-            targetRowIndex = max(0, min(targetRowIndex, bottomRowCount - 1))
+            targetRowIndex = max(0, min(targetRowIndex, bottomRowCount))
             targetIndex = topRowCount + middleRowCount + targetRowIndex
         case 1: // Middle row: indices 5-8 (4 tiles)
-            targetRowIndex = max(0, min(targetRowIndex, middleRowCount - 1))
+            targetRowIndex = max(0, min(targetRowIndex, middleRowCount))
             targetIndex = topRowCount + targetRowIndex
         case 2: // Top row: indices 0-4 (5 tiles)
-            targetRowIndex = max(0, min(targetRowIndex, topRowCount - 1))
+            targetRowIndex = max(0, min(targetRowIndex, topRowCount))
             targetIndex = targetRowIndex
         default:
             targetIndex = originalIndex
         }
         
-        // Adjust target index if inserting after the original position
-        if targetIndex > originalIndex {
-            targetIndex -= 1
+        // Only reorder if the position actually changed
+        if targetIndex != originalIndex {
+            // Remove tile from original position first
+            allTiles.remove(at: originalIndex)
+            allTileNames.remove(at: originalIndex)
+            
+            // Adjust target index if inserting after the original position (since we removed one item)
+            if targetIndex > originalIndex {
+                targetIndex -= 1
+            }
+            
+            // Insert at new position in master list
+            allTiles.insert(tile, at: targetIndex)
+            allTileNames.insert(imageName, at: targetIndex)
+            
+            // Redistribute all tiles to rows (this maintains the 5-4-5 distribution)
+            // This works for same-row reordering and cross-row moves
+            redistributeTilesToRows()
+            
+            // Recalculate all positions with animation so tiles shift smoothly
+            updateTilePosition(animated: true)
         }
-        
-        // Remove tile from original position and insert at new position
-        allTiles.remove(at: originalIndex)
-        allTileNames.remove(at: originalIndex)
-        allTiles.insert(tile, at: targetIndex)
-        allTileNames.insert(imageName, at: targetIndex)
-        
-        // Redistribute all tiles to rows (this maintains the 5-4-5 distribution)
-        redistributeTilesToRows()
-        
-        // Recalculate all positions with animation so tiles shift smoothly
-        updateTilePosition(animated: true)
     }
 }
