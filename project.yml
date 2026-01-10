@@ -42,3 +42,13 @@ targets:
                 UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
         UILaunchScreen:
           UILaunchScreenStoryboardName: LaunchScreen
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
