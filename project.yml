@@ -33,7 +33,7 @@ targets:
     info:
       path: VerticalApp/Info.plist
       properties:
-        CFBundleDisplayName: Vertical
+        CFBundleDisplayName: Vertical Demo
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
           UISceneConfigurations:
